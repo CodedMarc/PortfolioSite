@@ -1,0 +1,27 @@
+.projectSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 70vh;
+  padding: 2% 10%;
+
+  .projectDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .projectPrev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+.myProject {
+  width: 400px;
+  height: 400px;
+  background: blue;
+}
