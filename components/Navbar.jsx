@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import PixelMe from '../public/assets/pixelme.jpg';
+import PixelMe from './../public/assets/pixelme.jpg';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
