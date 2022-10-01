@@ -5,7 +5,7 @@ const ProjectCard = ({ img, name, desc, tech, link}) => {
     <li className={styles.ProjectCard}>
 
       <div className={styles.projectImg}>
-        <Image src={img} alt={`${name} project`} />
+        <Image unoptimized={true} src={img} alt={`${name} project`} priority />
       </div>
 
       <div className={styles.projectText}>

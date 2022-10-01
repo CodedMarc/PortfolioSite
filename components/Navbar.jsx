@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.scss';
+import pixelme from '../public/assets/pixelme.jpg'
 
 const Navbar = () => {
   return (
     <nav className={styles.Navbar}>
       <div className={styles.heading}>
-        <Image className={styles.logoImg} width={50} height={50} alt="CodedMarc Logo" src='/../public/assets/pixelme.jpg' />
+        <Image priority unoptimized={true} className={styles.logoImg} width={50} height={50} alt="CodedMarc Logo" src={pixelme} />
         <h1>Marc<span>Doran</span></h1>
       </div>
       <ul className={styles.linksContainer}>
