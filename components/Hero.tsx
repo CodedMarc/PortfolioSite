@@ -21,7 +21,7 @@ const Hero = () => {
             <Image src={SongPalate} alt="Song Palate Project" />
           </div>
           <div className={`${styles.PanopticImg} ${styles.heroImg}`}>
-            <Image src={Panoptic} alt="Panoptic Web Metrics Tracker Project" />
+            <Image unoptimized={true} priority src={Panoptic} alt="Panoptic Web Metrics Tracker Project" />
           </div>
           <div className={`${styles.CoffeeImg} ${styles.heroImg}`}>
             <Image src={CoffeePic} alt="Coffee Shop Landing Page Project" />
