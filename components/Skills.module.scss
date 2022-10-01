@@ -1,27 +1,29 @@
-.projectSection {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  min-height: 70vh;
-  padding: 2% 10%;
-
-  .projectDesc {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .projectPrev {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
+@import '../styles/Variables.scss';
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  color: $primary-color;
+  padding: 0% 8%;
 }
 
-.myProject {
-  width: 400px;
-  height: 400px;
-  background: blue;
+.projectSection {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0% 4%;
+}
+
+
+@media screen and (max-width: 950px) {
+  .sectionTitle {
+    font-size: 2rem;
+    padding: 4%;
+  }
+  .projectSection {
+    margin-top: 25px;
+    gap: 3.5rem;
+  }
 }

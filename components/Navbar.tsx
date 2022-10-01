@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import PixelMe from '../assets/pixelme.JPG';
+import PixelMe from '../public/assets/pixelme.jpg';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
@@ -12,8 +12,8 @@ const Navbar = () => {
       </div>
       <ul className={styles.linksContainer}>
         <li><Link href="#Hero">Home</Link></li>
-        <li><Link href="#Hero">About Me</Link></li>
         <li><Link href="#Hero">Projects</Link></li>
+        <li><Link href="#Hero">About Me</Link></li>
         <li><Link href="#Hero">Contact</Link></li>
       </ul>
       <div className={styles.buttonWrapper}>
