@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.scss';
-import pixelme from '../public/assets/pixelme.jpg'
+import pixelme from '../public/assets/pixelme.png'
 
 const Navbar = () => {
   return (
