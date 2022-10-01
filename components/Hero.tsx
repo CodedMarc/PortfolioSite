@@ -18,16 +18,16 @@ const Hero = () => {
       <div className={styles.heroRight}>
         <div className={styles.imgContainer}>
           <div className={`${styles.SongPalateImg} ${styles.heroImg}`}>
-            <Image src={SongPalate} alt="Song Palate Project" />
+            <Image priority src={SongPalate} alt="Song Palate Project" />
           </div>
           <div className={`${styles.PanopticImg} ${styles.heroImg}`}>
             <Image unoptimized={true} priority src={Panoptic} alt="Panoptic Web Metrics Tracker Project" />
           </div>
           <div className={`${styles.CoffeeImg} ${styles.heroImg}`}>
-            <Image src={CoffeePic} alt="Coffee Shop Landing Page Project" />
+            <Image priority src={CoffeePic} alt="Coffee Shop Landing Page Project" />
           </div>
           <div className={`${styles.CryptoImg} ${styles.heroImg}`}>
-            <Image src={Cryptracker} alt="Cryptocurrency Tracker Project" />
+            <Image priority src={Cryptracker} alt="Cryptocurrency Tracker Project" />
           </div>
         </div>
       </div>
