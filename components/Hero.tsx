@@ -4,7 +4,7 @@ import SongPalate from '../public/assets/SongPalatePic.png';
 import CoffeePic from '../public/assets/CoffeePic.png';
 import Panoptic from '../public/assets/PanopticPrev.gif';
 import Image from 'next/image';
-
+import pixelme from '../public/assets/pixelme.svg';
 
 const Hero = () => {
   return (
@@ -16,6 +16,7 @@ const Hero = () => {
         <button>Get Started</button>
       </div>
       <div className={styles.heroRight}>
+        {/* <Image src={pixelme} alt='hello' /> */}
         <div className={styles.imgContainer}>
           <div className={`${styles.SongPalateImg} ${styles.heroImg}`}>
             <Image priority src={SongPalate} alt="Song Palate Project" />

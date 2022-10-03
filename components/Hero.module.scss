@@ -118,11 +118,9 @@
   .heroRight {
     padding-top: 5%;
     .imgContainer {
-      padding: 0% 5%;
       display: grid;
       width: 100%;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
     }
     .heroImg {
       border: none;
