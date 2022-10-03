@@ -1,38 +1,29 @@
-import styles from './Hero.module.scss';
-import Cryptracker from '../public/assets/Cryptracker.png'
-import SongPalate from '../public/assets/SongPalatePic.png';
-import CoffeePic from '../public/assets/CoffeePic.png';
-import Panoptic from '../public/assets/PanopticPrev.gif';
-import Image from 'next/image';
+import styles from '../styles/Home.module.scss';
 import pixelme from '../public/assets/pixelme.svg';
+import PointToMe from './PointToMe';
+import Image from 'next/image';
+import { TriangleDownIcon } from '@chakra-ui/icons';
+import { Box, Icon, useColorModeValue, Text, createIcon } from '@chakra-ui/react';
 
 const Hero = () => {
   return (
-    <div className={styles.Hero}>
-      <div className={styles.heroLeft}>
-        <p className={styles.subtitle}>TRANSFORMING IDEAS INTO REALITY!</p>
-        <h1>Software Engineer</h1>
-        <p className={styles.longText}>I am a <span className={styles.FSD}>Full-Stack Software Engineer</span> that completes Web Applications from start to finish for companies, startups, and individuals all around the globe.</p>
-        <button>Get Started</button>
-      </div>
-      <div className={styles.heroRight}>
-        {/* <Image src={pixelme} alt='hello' /> */}
-        <div className={styles.imgContainer}>
-          <div className={`${styles.SongPalateImg} ${styles.heroImg}`}>
-            <Image priority src={SongPalate} alt="Song Palate Project" />
-          </div>
-          <div className={`${styles.PanopticImg} ${styles.heroImg}`}>
-            <Image unoptimized={true} priority src={Panoptic} alt="Panoptic Web Metrics Tracker Project" />
-          </div>
-          <div className={`${styles.CoffeeImg} ${styles.heroImg}`}>
-            <Image priority src={CoffeePic} alt="Coffee Shop Landing Page Project" />
-          </div>
-          <div className={`${styles.CryptoImg} ${styles.heroImg}`}>
-            <Image priority src={Cryptracker} alt="Cryptocurrency Tracker Project" />
+      <div className={styles.Hero} id='Hero'>
+        <div className={styles.HeroLeft}>
+          <p className={`${styles.font2}`}>Hi, I&apos;m Marc Doran!</p>
+          <h1 className={`${styles.font1} ${styles.whiteish} `}>Software Engineer</h1>
+          <p className={styles.font3}>I am a Full Stack Software Engineer with the skills to transform ideas into reality!</p>
+        </div>
+        <div className={styles.HeroRight}>
+          <PointToMe />
+          <div className={styles.pixelmeImg}>
+            <Image unoptimized={true} priority layout='responsive' quality={100} width={400} height={400}src={pixelme} alt='Pixel Portrait of Marc Doran' />
           </div>
         </div>
+          <div className={styles.scrollDown}>
+            <p>scroll down</p>
+            <TriangleDownIcon />
+          </div>
       </div>
-    </div>
   )
 }
 

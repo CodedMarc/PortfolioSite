@@ -1,29 +1,17 @@
 @import '../styles/Variables.scss';
 .sectionTitle {
+  font-family: $heading1;
   font-size: 3rem;
   font-weight: 900;
   text-decoration: underline;
   text-underline-offset: 20px;
-  color: $primary-color;
-  padding: 0% 8%;
+  color: white;
+  letter-spacing: 5px;
 }
 
 .projectSection {
   margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 0% 4%;
-}
-
-
-@media screen and (max-width: 950px) {
-  .sectionTitle {
-    font-size: 2rem;
-    padding: 4%;
-  }
-  .projectSection {
-    margin-top: 25px;
-    gap: 3.5rem;
-  }
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
 }

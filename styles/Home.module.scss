@@ -1,0 +1,133 @@
+@import '../styles/Variables.scss';
+.NavTitle {
+  font-family: $heading3;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-shadow: -2px 2px red, 3px 0px black;
+  letter-spacing: 5px;
+  font-size: 3rem;
+}
+.font1 {
+  font-family: $heading2;
+  text-shadow: 5px 2px black;
+  font-size: 4rem;
+  letter-spacing: 5px;
+  font-weight: 900;
+}
+.font2 {
+  text-shadow: 2px 1px black;
+  font-family: $heading2;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: $red;
+}
+.font3 {
+  font-family: $heading3;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.1);
+  color: white;
+}
+.whiteish {
+  color: white;
+}
+
+.HeroLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.pixelmeImg {
+  width: 60%;
+  border: 4px solid $yellow;
+  overflow:hidden;
+  border-radius: 20px;
+  animation: float 4s ease-in-out infinite;
+  transition: 0.5s ease;
+}
+.pixelmeImg:hover {
+  width: 62%;
+  transition: 0.5s ease;
+}
+.PointToMe {
+  animation: floatNoShadow 4s ease-in-out infinite;
+}
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+@keyframes floatNoShadow {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+.HeroRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .pointing {
+    font-family: $heading1;
+    letter-spacing: 3px;
+  }
+}
+
+.scrollDown {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  animation: blink 1s steps(5, start) infinite;
+  p {
+    font-family: $heading2;
+  }
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .font1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .HeroLeft {
+    text-align: center;
+    align-items: center;
+  }
+  .font1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .font2 {
+    text-align: center;
+    font-size: 1rem;
+  }
+  .scrollDown {
+    text-align: center;
+    justify-content: center;
+
+  }
+}

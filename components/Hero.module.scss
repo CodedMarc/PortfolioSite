@@ -1,4 +1,15 @@
 @import '../styles/Variables.scss';
+
+.NavTitle {
+  font-family: $heading3;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.font1 {
+  font-family: $heading2;
+  font-size: 3rem;
+  letter-spacing: 5px;
+}
 .Hero {
   display: grid;
   grid-template-columns: 1fr 1fr;

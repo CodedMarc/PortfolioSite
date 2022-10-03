@@ -21,7 +21,7 @@ const Skills = () => {
     {
       name: 'Panoptic Beta',
       desc: 'An innovative metrics tracker for Web Applications! An intuitive solution for monitoring key web application metrics per git commit!',
-      img: Panoptic,
+      img: SongPalate,
       tech: ['NextJS', 'Github OAuth', 'PassportJS', 'MongoDB Atlas', 'SCSS', 'ChartJS', 'Vercel'],
       link: 'https://panoptic.app/'
     },
@@ -44,20 +44,16 @@ const Skills = () => {
   const renderProjects = [];
 
   for (let i = 0; i < projects.length; i ++) {
-    renderProjects.push(<ProjectCard name={projects[i].name} desc={projects[i].desc} img={projects[i].img} tech={projects[i].tech} link={projects[i].link} />)
+    renderProjects.push(<ProjectCard key={projects[i].name} name={projects[i].name} desc={projects[i].desc} img={projects[i].img} tech={projects[i].tech} link={projects[i].link} />)
   }
-
-  useEffect(() => {
-
-  }, [])
 
   return (
     <section id="Skills">
       <h1 className={styles.sectionTitle}>Projects</h1>
-      <ul id="projects" className={styles.projectSection}>
+      <div id="projects" className={styles.projectSection}>
         {renderProjects}
         
-      </ul>
+      </div>
     </section>
   )
 }

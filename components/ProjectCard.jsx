@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from './ProjectCard.module.scss';
 const ProjectCard = ({ img, name, desc, tech, link}) => {
   return (
-    <li className={styles.ProjectCard}>
+    <div className={styles.ProjectCard}>
 
       <div className={styles.projectImg}>
         <Image unoptimized={true} src={img} alt={`${name} project`} priority />
@@ -22,7 +22,7 @@ const ProjectCard = ({ img, name, desc, tech, link}) => {
 
       </div>
 
-    </li>
+    </div>
   )
 }
 
