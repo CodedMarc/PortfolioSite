@@ -1,10 +1,12 @@
+import styles from '../styles/About.module.scss';
+import PlayerCard from './PlayerCard';
 const About = () => {
   return (
-    <div id="About">
-      <div className="heading">
-        <p className="subheading">Im not done yet...</p>
-      </div>
-    </div>
+    <section id='About'>
+      <h1 className={styles.aboutTitle}>Player Card / About Me</h1>
+      <PlayerCard />
+    </section>
+
   )
 }
 

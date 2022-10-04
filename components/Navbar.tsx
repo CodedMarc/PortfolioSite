@@ -12,7 +12,7 @@ import styles from '../styles/Home.module.scss';
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Box zIndex={'10'} position='fixed' w='100%' top='0' px={{base: '2%', md: '9%'}} bg='rgba(0,0,0,0)'>
+    <Box zIndex={'10'} position='fixed' w='100%' top='0' px={{base: '1%', md: '9%'}} bg='rgba(0,0,0,0)'>
     <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
       {/* <Flex alignItems='center' justify='center' maxW='80px'>
         <Image src={pixelme} alt='Pixel Portrait of Marc Doran'/>

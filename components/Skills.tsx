@@ -7,24 +7,25 @@ import CoffeePic from '../public/assets/CoffeePic.png';
 import Panoptic from '../public/assets/PanopticPrev.gif';
 import Image from 'next/image';
 import ProjectCard from './ProjectCard';
+import { Grid } from '@chakra-ui/react';
 const Skills = () => {
   const [about, setAbout] = useState('About the project. What it solved. What it does. How I did it.')
   const [technologies, setTechnologies] = useState('JS');
   const [projects, setProjects] = useState([
     {
-      name: 'Song Palate', 
-      desc: 'A web app with a redesigned Spotify UI that allows users to connect their Spotify account and listen to music using the Spotify Web Player. ', 
-      img: SongPalate,
-      tech: ['React', 'Express', 'MongoDB Atlas', 'Spotify API', 'Heroku'],
-      link: 'http://SongPalate.herokuapp.com/' 
-    }, 
-    {
       name: 'Panoptic Beta',
-      desc: 'An innovative metrics tracker for Web Applications! An intuitive solution for monitoring key web application metrics per git commit!',
+      desc: "An innovative metrics tracker for web applications that utilizes Google's Lighthouse SDK to provide metric scores for performance, speed, accessibility, and best practices per Git Commit!",
       img: SongPalate,
       tech: ['NextJS', 'Github OAuth', 'PassportJS', 'MongoDB Atlas', 'SCSS', 'ChartJS', 'Vercel'],
       link: 'https://panoptic.app/'
     },
+    {
+      name: 'Song Palate', 
+      desc: 'A web app that uses the Spotify API to allows users to connect their Spotify account and listen to their favorite music on a simplified UI. ', 
+      img: SongPalate,
+      tech: ['React', 'Express', 'MongoDB Atlas', 'Spotify API', 'Heroku'],
+      link: 'http://SongPalate.herokuapp.com/' 
+    }, 
     {
       name: 'Cryptracker',
       desc: 'View a list of live cryptocurrency prices, market cap, trading volume, and percent change in the last 24 hours!',
@@ -50,10 +51,11 @@ const Skills = () => {
   return (
     <section id="Skills">
       <h1 className={styles.sectionTitle}>Projects</h1>
-      <div id="projects" className={styles.projectSection}>
+      <Grid id="projects" templateColumns={{base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={6} className={styles.projectSection}>
         {renderProjects}
         
-      </div>
+      </Grid>
+      <h1 style={{textAlign: 'center', marginTop: '30px'}}>See More...</h1>
     </section>
   )
 }

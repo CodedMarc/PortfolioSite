@@ -1,0 +1,54 @@
+@import './Variables.scss';
+
+.aboutTitle {
+  font-family: $heading1;
+  font-size: 3rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  color: white;
+  letter-spacing: 5px;
+}
+
+.PlayerCard {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 4px solid white;
+  width: 100%;
+  .textBox {
+    overflow-y: scroll;
+    max-height: 60vh;
+    background-color: rgba(118,74,241, 0.9);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-left: 2px solid white;
+    padding: 5%;
+    font-size: 1.5rem;    
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      color: white;
+    }
+  }
+}
+
+.question {
+  font-family: $heading3;
+  color: $yellow;
+  text-decoration: underline;
+}
+.answer {
+  font-family: $heading3;
+}
+
+@media screen and (max-width: 950px) {
+  .PlayerCard {
+    grid-template-columns: 1fr;
+  }
+  .answer {
+    width: 50%;
+  }
+}

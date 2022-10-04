@@ -1,16 +1,10 @@
 import type { NextPage } from 'next'
 import About from '../components/About'
 import Skills from '../components/Skills'
-import { ReactNode } from 'react';
-import styles from '../styles/Home.module.scss';
 import Navbar from '../components/Navbar';
-import Cryptracker from '../public/assets/Cryptracker.png'
-import SongPalate from '../public/assets/SongPalatePic.png';
-import CoffeePic from '../public/assets/CoffeePic.png';
-import Panoptic from '../public/assets/PanopticPrev.gif';
-import Image from 'next/image';
-import pixelme from '../public/assets/pixelme.svg';
 import Hero from '../components/Hero';
+import Badges from '../components/Badges';
+import Contact from '../components/Contact';
 import { 
   Container,
   Flex,
@@ -46,6 +40,7 @@ const Home: NextPage = () => {
       {/* ************************* PROJECTS ************************* */}
       <Skills />
       <About />
+      <Contact />
     </div>
 
   )
