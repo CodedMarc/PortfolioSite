@@ -25,7 +25,7 @@ const ContactForm = (props: any) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": e.target.getAttribute("name"),
-          
+          name, email, message,
         }),
       })
       .then(() => func(true))
