@@ -17,52 +17,49 @@ const ContactForm = (props: any) => {
   return (
     <form className={styles.form} style={submitted ? {display: 'none'} : {display: 'block'}} name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
-        <input
+      <Stack spacing={4}>
+        <Input
         value={name}
         onChange={(e) => setName(e.target.value)}
         name="FullName"
         required
           placeholder="Full Name"
-          // bg={'gray.100'}
-          // border={0}
-          // color={'gray.500'}
-          // _placeholder={{
-          //   color: 'gray.500',
-          // }}
+          bg={'gray.100'}
+          border={0}
+          color={'gray.500'}
+          _placeholder={{
+            color: 'gray.500',
+          }}
         />
-        <input
+        <Input
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         type="email"
         required
         name="Email"
           placeholder="Email Address"
-          // bg={'gray.100'}
-          // border={0}
-          // color={'gray.500'}
-          // _placeholder={{
-          //   color: 'gray.500',
-          // }}
+          bg={'gray.100'}
+          border={0}
+          color={'gray.500'}
+          _placeholder={{
+            color: 'gray.500',
+          }}
         />
-        <textarea
+        <Textarea
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         name="Message" 
         required
         placeholder="Enter Message" 
-        // bg='gray.100' 
-        // border={0} 
-        // color={'gray.500'}
-        // _placeholder={{color: 'gray.500'}}
-        />
-        <button type="submit" onClick={handleSubmit} 
-        // fontFamily={'heading'} 
-        // bg={'gray.200'} 
-        // color={'gray.800'}
-        >
+        bg='gray.100' 
+        border={0} 
+        color={'gray.500'}
+        _placeholder={{color: 'gray.500'}}/>
+        <Button type="submit" onClick={handleSubmit} fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
           Submit
-        </button>
+        </Button>
         <p style={{color: 'yellow', textAlign: 'center'}} className={styles.errorMessage}>{error}</p>
+      </Stack>
       </form>
   )
 }

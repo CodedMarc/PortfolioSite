@@ -46,32 +46,7 @@
   width: 100%;
 }
 .form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  input {
-    background-color: white;
-    color: black;
-    padding: 0.5em 1em;
-  }
-  input::placeholder {
-    color: black;
-  }
-  button {
-    width: 100%;
-    background-color: whitesmoke;
-  }
-  textarea {
-    background-color: white;
-    color: black;
-    height: 100px;
-    padding: 0.5em 1em;
-  }
-  textarea::placeholder {
-    color: black;
-  }
 }
 @media screen and (max-width: 950px) {
   .title {
