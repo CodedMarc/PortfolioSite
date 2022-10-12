@@ -1,0 +1,65 @@
+@import './Variables.scss';
+
+.title {
+  font-family: $heading1;
+  font-size: 3rem;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 20px;
+  color: white;
+  letter-spacing: 5px;
+}
+.contactContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 55vh;
+  margin-top: 35px;
+
+  h1 {
+    font-family: $heading2;
+    text-shadow: 5px 2px black;
+    letter-spacing: 5px;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+  h2 {
+    font-family: $heading3;
+    font-size: 1.5rem;
+    text-shadow: -2px 2px red, 2px 0px black;
+    color: $yellow;
+  }
+}
+.contactText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-right: 5%;
+}
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.form {
+  width: 100%;
+}
+@media screen and (max-width: 950px) {
+  .title {
+    text-align: center;
+  }
+  .contactContainer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .contactText {
+    text-align: center;
+    padding-right: 0;
+  }
+}

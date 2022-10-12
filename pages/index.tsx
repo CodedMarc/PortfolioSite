@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Badges from '../components/Badges';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 import { 
   Container,
   Flex,
@@ -30,17 +31,14 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const Home: NextPage = () => {
   // NIGHT MODE
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <div id='index'>
-      {/* ************************* NAVBAR START ************************* */}
       <Navbar />
-      {/* ************************* HERO START ************************* */}
       <Hero />
-      {/* ************************* PROJECTS ************************* */}
       <Skills />
       <About />
       <Contact />
+      <Footer />
     </div>
 
   )

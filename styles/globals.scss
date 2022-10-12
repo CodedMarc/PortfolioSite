@@ -62,20 +62,18 @@ a {
 
 #Skills {
   position: relative;
-  min-height: 90vh;
   padding: 5% 10%;
   overflow:hidden;
 }
 #About {
   position: relative;
-  min-height: 90vh;
   padding: 5% 10%;
   overflow: hidden;
 }
 #Contact {
   position: relative;
-  min-height: 90vh;
   padding: 5% 10%;
+  min-height: 100vh;
   overflow: hidden;
 }
 @media screen and (max-width: 950px) {
@@ -83,9 +81,18 @@ a {
     overflow:hidden;
     padding: 5%;
   }
-
   #Hero {
     padding-top: 15%;
     grid-template-columns: 1fr;
+  }
+  #About {
+    padding: 5%;
+  }
+  #Contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
   }
 }

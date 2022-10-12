@@ -1,7 +1,7 @@
 import Image from "next/image"
 import styles from './ProjectCard.module.scss';
 
-const ProjectCard = ({ img, name, desc, tech, link}) => {
+const ProjectCard = ({ img, name, desc, tech, link, git}) => {
   return (
     <div className={styles.ProjectCard}>
 
@@ -18,7 +18,7 @@ const ProjectCard = ({ img, name, desc, tech, link}) => {
 
         <div className={styles.btnContainer}>
           <a href={link} target="_blank" rel="noreferrer" className={styles.visitSite}>Visit Site</a>
-          <a href={'/'} className={styles.visitGit}>GitHub</a>
+          <a href={git} target="_blank" rel="noreferrer" className={styles.visitGit}>GitHub</a>
         </div>
 
       </div>
