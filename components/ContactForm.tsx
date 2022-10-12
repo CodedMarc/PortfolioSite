@@ -24,7 +24,8 @@ const ContactForm = (props: any) => {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
-          "form-name": e.target.getAttribute("name")
+          "form-name": e.target.getAttribute("name"),
+          
         }),
       })
       .then(() => func(true))
@@ -34,7 +35,7 @@ const ContactForm = (props: any) => {
     if (!isEmail) return setError('Invalid Email');
   }
   return (
-    <form className={styles.form} style={submitted ? {display: 'none'} : {display: 'block'}} name="contact" method="POST" data-netlify="true">
+    <form onSubmit={handleSubmit} className={styles.form} style={submitted ? {display: 'none'} : {display: 'block'}} name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
       <Stack spacing={4}>
         <Input
@@ -74,7 +75,7 @@ const ContactForm = (props: any) => {
         border={0} 
         color={'gray.500'}
         _placeholder={{color: 'gray.500'}}/>
-        <Button type="submit" onClick={handleSubmit} fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
+        <Button type="submit" fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
           Submit
         </Button>
         <p style={{color: 'yellow', textAlign: 'center'}} className={styles.errorMessage}>{error}</p>
