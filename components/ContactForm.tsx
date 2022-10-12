@@ -7,10 +7,31 @@ const ContactForm = (props: any) => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const {submitted, func} = props;
+  // Encoder from Netlify Docs
+  function encode(data: any) {
+    return Object.keys(data)
+      .map(
+        (key) =>
+          encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  }
   const handleSubmit = (e: any) => {
-    // e.preventDefault();
+    e.preventDefault();
+    const myForm = e.target;
+    const formData = new FormData(myForm);
     const isEmail = email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    if (name.length > 0 && isEmail && message.length > 0) return func(true);
+    if (name.length > 0 && isEmail && message.length > 0) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": e.target.getAttribute("name")
+        }),
+      })
+      .then(() => func(true))
+      .catch((error) => alert(error));
+    };
     if (name.length === 0 || message.length === 0 || email.length === 0) return setError('Missing Input!');
     if (!isEmail) return setError('Invalid Email');
   }
