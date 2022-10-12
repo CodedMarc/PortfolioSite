@@ -18,8 +18,6 @@ const ContactForm = (props: any) => {
   }
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const myForm = e.target;
-    const formData = new FormData(myForm);
     const isEmail = email.toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     if (name.length > 0 && isEmail && message.length > 0) {
       fetch("/", {
