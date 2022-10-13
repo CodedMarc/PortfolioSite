@@ -1,7 +1,7 @@
 import Image from "next/image"
 import styles from './ProjectCard.module.scss';
 
-const ProjectCard = ({ img, name, desc, tech, link, git}) => {
+const ProjectCard = ({ name, desc, tech, link, git}) => {
   return (
     <div className={styles.ProjectCard}>
 
