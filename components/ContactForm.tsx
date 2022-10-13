@@ -25,11 +25,13 @@ const ContactForm = (props: any) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": e.target.getAttribute("name"),
-          name, email, message,
+          "FullName": name, 
+          "Email": email, 
+          "Message": message,
         }),
       })
       .then(() => func(true))
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
     };
     if (name.length === 0 || message.length === 0 || email.length === 0) return setError('Missing Input!');
     if (!isEmail) return setError('Invalid Email');
