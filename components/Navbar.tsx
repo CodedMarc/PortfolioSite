@@ -9,8 +9,8 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import styles from '../styles/Home.module.scss';
+
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box zIndex={'10'} position='fixed' w='100%' top='0' px={{base: '1%', md: '9%'}} bg='rgba(0,0,0,0)'>
     <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
@@ -25,13 +25,13 @@ const Navbar = () => {
         </Box> */}
           <Text ml='20px' className={styles.NavTitle} color='yellow.300' fontWeight={800}>CodedMarc</Text>
       </Flex>
-      <Flex alignItems={'center'}>
+      {/* <Flex alignItems={'center'}>
         <Stack direction={'row'} spacing={7}>
           <Button bg='white' color='black' onClick={toggleColorMode}>
             {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
           </Button>
         </Stack>
-      </Flex>
+      </Flex> */}
     </Flex>
   </Box>
   )

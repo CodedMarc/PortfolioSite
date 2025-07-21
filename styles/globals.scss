@@ -6,6 +6,158 @@
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+// PowerPoint-like transition styles
+.slides-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+  scroll-behavior: smooth;
+  position: relative;
+  --scroll-progress: 0%;
+  
+  // Progress indicator
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #fbbf24, #8a2be2);
+    transform-origin: left;
+    z-index: 1001;
+    transform: scaleX(calc(var(--scroll-progress) / 100));
+    transition: transform 0.1s ease-out;
+  }
+}
+
+// Keyboard navigation hint
+.keyboard-hint {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  z-index: 1002;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .key {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    margin: 0 2px;
+  }
+}
+
+// Progress bar animation
+@keyframes progressBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.section-slide {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  position: relative;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  overflow: hidden;
+  
+  // Slide-in animation for each section
+  &:nth-child(1) {
+    animation: slideInFromBottom 1s ease-out;
+  }
+  
+  &:nth-child(2) {
+    animation: slideInFromRight 1s ease-out 0.2s both;
+  }
+  
+  &:nth-child(3) {
+    animation: slideInFromLeft 1s ease-out 0.4s both;
+  }
+  
+  &:nth-child(4) {
+    animation: slideInFromTop 1s ease-out 0.6s both;
+  }
+  
+  // Hover effects for interactive elements
+  &:hover {
+    .interactive-element {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+// Slide transition animations
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Enhanced scroll behavior
+html {
+  scroll-behavior: smooth;
+}
+
+// Custom scrollbar for better UX
 ::-webkit-scrollbar-thumb {
   background-color: rgba(138,43,226, 0.75);
   border-radius: 30px;
@@ -36,6 +188,7 @@ a {
   background: -webkit-linear-gradient(360deg, rgba(197,53,216,1) 0%, rgba(65,28,142,1) 80%, rgba(197,53,216,1) 100%);
   background: linear-gradient(360deg, rgba(197,53,216,1) 0%, rgba(65,28,142,1) 80%, rgba(197,53,216,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c535d8",endColorstr="#c535d8",GradientType=1);
+  overflow: hidden; // Prevent horizontal scroll
 }
 
 #index::before {
@@ -54,6 +207,7 @@ a {
   min-height: -webkit-fill-available;
   opacity: 0.2;
 }
+
 #Hero {
   position: relative;
   padding: 10%;
@@ -78,6 +232,7 @@ a {
   min-height: 100vh;
   overflow: hidden;
 }
+
 @media screen and (max-width: 950px) {
   #Skills {
     overflow:hidden;
